@@ -1,0 +1,28 @@
+= form_for @task_stat do |f|
+  - if @task_stat.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@task_stat.errors.count, "error")} prohibited this task_stat from being saved:"
+      %ul
+        - @task_stat.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :open
+    = f.number_field :open
+  .field
+    = f.label :in_progress
+    = f.number_field :in_progress
+  .field
+    = f.label :resolved
+    = f.number_field :resolved
+  .field
+    = f.label :closed
+    = f.number_field :closed
+  .field
+    = f.label :total
+    = f.number_field :total
+  .field
+    = f.label :processing_date
+    = f.date_select :processing_date
+  .actions
+    = f.submit 'Save'
