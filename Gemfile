@@ -18,7 +18,7 @@ gem 'annotate'
 gem 'factory_girl_rails'
 gem 'settingslogic'
 gem 'gon'
-gem 'draper'
+gem 'draper', '~> 1.3'
 gem 'httparty'
 gem 'active_hash'
 gem 'whenever', :require => false
