@@ -1,0 +1,13 @@
+defaults: &defaults
+  backlog:
+    api:
+      count: https://bibo-mng.backlog.jp/api/v2/issues/count
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
