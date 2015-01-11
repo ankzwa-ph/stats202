@@ -5,6 +5,10 @@ class TaskStatsController < ApplicationController
   # GET /task_stats.json
   def index
     @task_stats = TaskStat.all
+    gon.stats_open        = @task_stats.select(:open).map { |x| x[:open] }
+    gon.stats_in_progress = @task_stats.select(:in_progress).map { |x| x[:in_progress] }
+    gon.stats_resolved    = @task_stats.select(:resolved).map { |x| x[:resolved] }
+    gon.stats_today       = TaskStatus.all.map(&:name).map { |x| @task_stats.last[x] }
   end
 
   # GET /task_stats/1

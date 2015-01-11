@@ -1,30 +1,37 @@
 .row
-  %h1 Listing task_stats
+  .text-center
+    %h1 Listing Task Status
 
-  %table
-    %tr
-      %th Open
-      %th In progress
-      %th Resolved
-      %th Closed
-      %th Total
-      %th Processing date
-      %th
-      %th
-      %th
-
-    - @task_stats.each do |task_stat|
+    %table
       %tr
-        %td= task_stat.open
-        %td= task_stat.in_progress
-        %td= task_stat.resolved
-        %td= task_stat.closed
-        %td= task_stat.total
-        %td= task_stat.processing_date
-        %td= link_to 'Show', task_stat, class: 'label'
-        %td= link_to 'Edit', edit_task_stat_path(task_stat), class: 'label success'
-        %td= link_to 'Destroy', task_stat, class: 'label alert', :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Processing date
+        %th Open
+        %th In progress
+        %th Resolved
+        %th Closed
+        %th Total
+        %th
+        %th
+        %th
 
-  %br
+      - @task_stats.each do |task_stat|
+        %tr
+          %td= task_stat.processing_date
+          %td= task_stat.open
+          %td= task_stat.in_progress
+          %td= task_stat.resolved
+          %td= task_stat.closed
+          %td= task_stat.total
+          %td= link_to 'Show', task_stat, class: 'label'
+          %td= link_to 'Edit', edit_task_stat_path(task_stat), class: 'label success'
+          %td= link_to 'Destroy', task_stat, class: 'label alert', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-  = link_to 'New Task stat', new_task_stat_path
+  %div
+    .text-center
+      %h1 Line Chart
+    %canvas{ id: "lineChart", width: "800",  height: "400" }
+
+  %div
+    .text-center
+      %h1 Pie Chart
+    %canvas{ id: "pieChart", width: "800",  height: "400" }
