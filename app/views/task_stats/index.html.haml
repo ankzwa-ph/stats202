@@ -1,29 +1,30 @@
-%h1 Listing task_stats
+%div.row
+  %h1 Listing task_stats
 
-%table
-  %tr
-    %th Open
-    %th In progress
-    %th Resolved
-    %th Closed
-    %th Total
-    %th Processing date
-    %th
-    %th
-    %th
-
-  - @task_stats.each do |task_stat|
+  %table
     %tr
-      %td= task_stat.open
-      %td= task_stat.in_progress
-      %td= task_stat.resolved
-      %td= task_stat.closed
-      %td= task_stat.total
-      %td= task_stat.processing_date
-      %td= link_to 'Show', task_stat
-      %td= link_to 'Edit', edit_task_stat_path(task_stat)
-      %td= link_to 'Destroy', task_stat, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Open
+      %th In progress
+      %th Resolved
+      %th Closed
+      %th Total
+      %th Processing date
+      %th
+      %th
+      %th
 
-%br
+    - @task_stats.each do |task_stat|
+      %tr
+        %td= task_stat.open
+        %td= task_stat.in_progress
+        %td= task_stat.resolved
+        %td= task_stat.closed
+        %td= task_stat.total
+        %td= task_stat.processing_date
+        %td= link_to 'Show', task_stat, class: 'label'
+        %td= link_to 'Edit', edit_task_stat_path(task_stat)
+        %td= link_to 'Destroy', task_stat, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Task stat', new_task_stat_path
+  %br
+
+  = link_to 'New Task stat', new_task_stat_path
