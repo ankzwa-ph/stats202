@@ -35,3 +35,14 @@
     .text-center
       %h1 Pie Chart
     %canvas{ id: "pieChart", width: "800",  height: "400" }
+
+    %table
+      %tr
+        %td{ class: 'status_open' }
+        %td OPEN
+      %tr
+        %td{ class: 'status_in_progress' }
+        %td IN PROGRESS
+      %tr
+        %td{ class: 'status_resolved' }
+        %td RESOLVED

@@ -30,9 +30,9 @@ function drawLineChart() {
         datasets: [
             {
                 label: "OPEN",
-                fillColor:   "rgba(151,187,205,0.2)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor:  "rgba(151,187,205,1)",
+                fillColor:   "rgba(247,70,74,0.2)",
+                strokeColor: "rgba(247,70,74,1)",
+                pointColor:  "rgba(247,70,74,1)",
                 pointStrokeColor:   "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "#fff",
@@ -40,9 +40,9 @@ function drawLineChart() {
             },
             {
                 label: "IN PROGRESS",
-                fillColor:   "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor:  "rgba(220,220,220,1)",
+                fillColor:   "rgba(70,191,189,0.2)",
+                strokeColor: "rgba(70,191,189,1)",
+                pointColor:  "rgba(70,191,189,1)",
                 pointStrokeColor:   "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "#fff",
@@ -50,9 +50,9 @@ function drawLineChart() {
             },
             {
                 label: "RELSOLVED",
-                fillColor:   "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor:  "rgba(220,220,220,1)",
+                fillColor:   "rgba(253,180,92,0.2)",
+                strokeColor: "rgba(253,180,92,1)",
+                pointColor:  "rgba(253,180,92,1)",
                 pointStrokeColor:   "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "#fff",

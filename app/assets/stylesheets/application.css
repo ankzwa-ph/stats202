@@ -14,3 +14,13 @@
  *= require_self
  *= require foundation
  */
+
+.status_open {
+  background-color: #F7464A;
+}
+.status_in_progress {
+  background-color: #46BFBD;
+}
+.status_resolved {
+  background-color: #FDB45C;
+}
