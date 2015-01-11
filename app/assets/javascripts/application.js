@@ -19,7 +19,11 @@
 $(document).foundation();
 
 jQuery(document).ready(function() {
+    drawLineChart();
+    drawPieChart();
+});
 
+function drawLineChart() {
     var ctx = document.getElementById("lineChart").getContext("2d");
     var data = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -57,7 +61,9 @@ jQuery(document).ready(function() {
         ]
     }
     var myLineChart = new Chart(ctx).Line(data, {});
+}
 
+function drawPieChart() {
     var ctx = document.getElementById("pieChart").getContext("2d");
     var data = [
         {
@@ -80,4 +86,4 @@ jQuery(document).ready(function() {
         }
     ]
     var myPieChart = new Chart(ctx).Pie(data,{});
-});
+}
