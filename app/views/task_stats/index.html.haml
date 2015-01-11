@@ -1,4 +1,4 @@
-%div.row
+.row
   %h1 Listing task_stats
 
   %table
@@ -22,8 +22,8 @@
         %td= task_stat.total
         %td= task_stat.processing_date
         %td= link_to 'Show', task_stat, class: 'label'
-        %td= link_to 'Edit', edit_task_stat_path(task_stat)
-        %td= link_to 'Destroy', task_stat, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Edit', edit_task_stat_path(task_stat), class: 'label success'
+        %td= link_to 'Destroy', task_stat, class: 'label alert', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
   %br
 

@@ -1,24 +1,25 @@
-%p#notice= notice
+.row
+  %p#notice= notice
 
-%p
-  %b Open:
-  = @task_stat.open
-%p
-  %b In progress:
-  = @task_stat.in_progress
-%p
-  %b Resolved:
-  = @task_stat.resolved
-%p
-  %b Closed:
-  = @task_stat.closed
-%p
-  %b Total:
-  = @task_stat.total
-%p
-  %b Processing date:
-  = @task_stat.processing_date
+  %p
+    %b Open:
+    = @task_stat.open
+  %p
+    %b In progress:
+    = @task_stat.in_progress
+  %p
+    %b Resolved:
+    = @task_stat.resolved
+  %p
+    %b Closed:
+    = @task_stat.closed
+  %p
+    %b Total:
+    = @task_stat.total
+  %p
+    %b Processing date:
+    = @task_stat.processing_date
 
-= link_to 'Edit', edit_task_stat_path(@task_stat)
-\|
-= link_to 'Back', task_stats_path
+  = link_to 'Edit', edit_task_stat_path(@task_stat)
+  \|
+  = link_to 'Back', task_stats_path
