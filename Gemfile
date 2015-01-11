@@ -30,5 +30,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'hirb'
+  gem 'hirb-unicode'
   gem 'rubocop', require: false
 end
