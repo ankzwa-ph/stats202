@@ -7,6 +7,7 @@ class TaskStatsController < ApplicationController
     @search = Search::TaskStat.new(search_params[:search_task_stat])
     @task_stats = @search.matches
     today = @task_stats.last
+    gon.labels            = @task_stats.select(:processing_date).map { |x| x[:processing_date].to_s }
     gon.stats_open        = @task_stats.select(:open).map { |x| x[:open] }
     gon.stats_in_progress = @task_stats.select(:in_progress).map { |x| x[:in_progress] }
     gon.stats_resolved    = @task_stats.select(:resolved).map { |x| x[:resolved] }

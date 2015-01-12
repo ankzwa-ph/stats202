@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
 function drawLineChart() {
     var ctx = document.getElementById("lineChart").getContext("2d");
     var data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: gon.labels,
         datasets: [
             {
                 label: "OPEN",
