@@ -12,9 +12,10 @@
         .field.date-select.large-3.columns
           = f.label :date_to
           = f.text_field :date_to, use_short_month: true
-        .field.date-select.large-6.columns
-          = f.submit 'search'
-          = link_to 'clear', task_stats_path
+        .field.date-select.large-3.columns
+
+      = f.submit 'search', class: 'button small'
+      = link_to 'clear', task_stats_path, class: 'button secondary small'
 
   .text-center.area
     %h1 Spread Sheet
