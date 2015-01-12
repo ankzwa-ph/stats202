@@ -24,6 +24,12 @@
 .status_resolved {
   background-color: #FDB45C;
 }
-.date-select select {
-  width: 70px;
+.area {
+  margin-top: 20px;
+}
+.date-select input {
+  width: 120px;
+}
+.pie-legend {
+  margin-top: 200px;
 }
