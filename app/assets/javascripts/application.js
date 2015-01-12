@@ -23,6 +23,11 @@ jQuery(document).ready(function() {
     drawPieChart();
 
     $(".transposed tr:eq(0)").addClass("odd");
+
+    $("[id^=search_task_stat_date_]").datetimepicker({
+        timepicker: false,
+        format:     'Y-m-d'
+    });
 });
 
 function drawLineChart() {
