@@ -20,6 +20,12 @@
   .text-center.area
     %h1 Spreadsheet
 
+    %table{ class: 'transposed' }
+      - @transposed.each do |arr|
+        %tr
+          - arr.each do |item|
+            %td= item
+
     %table
       %tr
         %th Processing date

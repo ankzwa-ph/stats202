@@ -33,3 +33,6 @@
 .pie-legend {
   margin-top: 200px;
 }
+.transposed tr td {
+  padding: 3px;
+}
