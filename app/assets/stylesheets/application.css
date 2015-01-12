@@ -36,3 +36,10 @@
 .transposed tr td {
   padding: 3px;
 }
+.transposed tr.odd td {
+  background-color: #1B9AF7;
+  color: #ffffff;
+}
+h1 {
+  color: #222222;
+}

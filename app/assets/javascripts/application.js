@@ -21,6 +21,8 @@ $(document).foundation();
 jQuery(document).ready(function() {
     drawLineChart();
     drawPieChart();
+
+    $(".transposed tr:eq(0)").addClass("odd");
 });
 
 function drawLineChart() {
