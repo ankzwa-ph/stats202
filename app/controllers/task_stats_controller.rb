@@ -6,10 +6,11 @@ class TaskStatsController < ApplicationController
   def index
     @search = Search::TaskStat.new(search_params[:search_task_stat])
     @task_stats = @search.matches
+    today = @task_stats.last
     gon.stats_open        = @task_stats.select(:open).map { |x| x[:open] }
     gon.stats_in_progress = @task_stats.select(:in_progress).map { |x| x[:in_progress] }
     gon.stats_resolved    = @task_stats.select(:resolved).map { |x| x[:resolved] }
-    gon.stats_today       = TaskStatus.all.map(&:name).map { |x| @task_stats.last[x] }
+    gon.stats_today       = TaskStatus.all.map(&:name).map { |x| today[x] } unless today.nil?
   end
 
   # GET /task_stats/1
