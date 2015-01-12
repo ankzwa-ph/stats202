@@ -8,9 +8,13 @@
       .row
         .field.date-select.large-6.columns
           = f.label :date_from
-          = date_select :processing_date, :date_from, use_short_month: true
+          = f.text_field :date_from, use_short_month: true
+        .field.date-select.large-6.columns
+          = f.label :date_to
+          = f.text_field :date_to, use_short_month: true
       .field.large-12
         = f.submit 'search'
+        = link_to 'clear', task_stats_path
 
   .text-center
     %table

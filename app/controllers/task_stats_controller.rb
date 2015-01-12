@@ -4,7 +4,7 @@ class TaskStatsController < ApplicationController
   # GET /task_stats
   # GET /task_stats.json
   def index
-    @search = Search::TaskStat.new(extract_processing_date)
+    @search = Search::TaskStat.new(search_params[:search_task_stat])
     @task_stats = @search.matches
     gon.stats_open        = @task_stats.select(:open).map { |x| x[:open] }
     gon.stats_in_progress = @task_stats.select(:in_progress).map { |x| x[:in_progress] }
@@ -78,12 +78,6 @@ class TaskStatsController < ApplicationController
     end
 
     def search_params
-      params.permit(processing_date: [:date_from])
-    end
-
-    def extract_processing_date
-      processing_date = search_params[:processing_date]
-      return {} if processing_date.nil?
-      { date_from: processing_date.values.join("-") }
+      params.permit(search_task_stat: [:date_from, :date_to])
     end
 end
