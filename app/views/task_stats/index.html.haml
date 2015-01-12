@@ -2,6 +2,17 @@
   .text-center
     %h1 Listing Task Status
 
+  = form_for @search, url: task_stats_path, method: :get do |f|
+    %fieldset
+      %legend Search
+      .row
+        .field.date-select.large-6.columns
+          = f.label :date_from
+          = date_select :processing_date, :date_from, use_short_month: true
+      .field.large-12
+        = f.submit 'search'
+
+  .text-center
     %table
       %tr
         %th Processing date

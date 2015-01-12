@@ -4,7 +4,8 @@ class TaskStatsController < ApplicationController
   # GET /task_stats
   # GET /task_stats.json
   def index
-    @task_stats = TaskStat.all
+    @search = Search::TaskStat.new(extract_processing_date)
+    @task_stats = @search.matches
     gon.stats_open        = @task_stats.select(:open).map { |x| x[:open] }
     gon.stats_in_progress = @task_stats.select(:in_progress).map { |x| x[:in_progress] }
     gon.stats_resolved    = @task_stats.select(:resolved).map { |x| x[:resolved] }
@@ -74,5 +75,15 @@ class TaskStatsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_stat_params
       params.require(:task_stat).permit(:open, :in_progress, :resolved, :closed, :total, :processing_date)
+    end
+
+    def search_params
+      params.permit(processing_date: [:date_from])
+    end
+
+    def extract_processing_date
+      processing_date = search_params[:processing_date]
+      return {} if processing_date.nil?
+      { date_from: processing_date.values.join("-") }
     end
 end

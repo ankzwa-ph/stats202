@@ -24,3 +24,6 @@
 .status_resolved {
   background-color: #FDB45C;
 }
+.date-select select {
+  width: 70px;
+}
