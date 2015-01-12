@@ -26,30 +26,6 @@
           - arr.each do |item|
             %td= item
 
-    %table
-      %tr
-        %th Processing date
-        %th Open
-        %th In progress
-        %th Resolved
-        %th Closed
-        %th Total
-        %th
-        %th
-        %th
-
-      - @task_stats.each do |task_stat|
-        %tr
-          %td= task_stat.processing_date
-          %td= task_stat.open
-          %td= task_stat.in_progress
-          %td= task_stat.resolved
-          %td= task_stat.closed
-          %td= task_stat.total
-          %td= link_to 'Show', task_stat, class: 'label'
-          %td= link_to 'Edit', edit_task_stat_path(task_stat), class: 'label success'
-          %td= link_to 'Destroy', task_stat, class: 'label alert', :method => :delete, :data => { :confirm => 'Are you sure?' }
-
   %div
     .text-center.area
       %h1 Line Chart
