@@ -11,6 +11,7 @@ module BacklogApiAccessible
 
   private
     def url_generate(params)
+      return params.to_s + '?apiKey=%s' % ENV['BACKLOG_API_KEY'] if params.is_a? Fixnum
       res = '?apiKey=%s&projectId[]=1073827573&' % ENV['BACKLOG_API_KEY']
       res += params.map { |x| x.join('=') }.join('&')
     end

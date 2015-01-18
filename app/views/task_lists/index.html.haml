@@ -16,7 +16,7 @@
               %th{ class: 'backlog-key' }  P Key
 
             - assignee.each do |task|
-              - parent = get_parent(task['parentIssueId']) unless task['parentIssueId'].nil?
+              - parent = fetch(Settings.backlog.api.issue, task['parentIssueId']) unless task['parentIssueId'].nil?
               %tr
                 %td= link_to task['issueKey'], Settings.backlog.base_url + (Settings.backlog.path.view % task['issueKey'])
                 %td= task['status']['name']

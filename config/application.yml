@@ -3,7 +3,7 @@ defaults: &defaults
     base_url: https://bibo-mng.backlog.jp
     api:
       count:  /api/v2/issues/count
-      issue:  /api/v2/issues/%s
+      issue:  /api/v2/issues/
       issues: /api/v2/issues
     path:
       view: /view/%s
