@@ -1,7 +1,10 @@
 defaults: &defaults
   backlog:
     api:
-      count: https://bibo-mng.backlog.jp/api/v2/issues/count
+      count:  https://bibo-mng.backlog.jp/api/v2/issues/count
+      issues: https://bibo-mng.backlog.jp/api/v2/issues
+    view:
+      url: https://bibo-mng.backlog.jp/view/%s
 
 development:
   <<: *defaults

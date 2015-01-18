@@ -1,2 +1,14 @@
-%h1 TaskLists#index
-%p Find me in app/views/task_lists/index.html.haml
+.row
+  .text-center.area
+    %h1 Listing Task Lists
+    .large-12.columns
+      - @tasks.each_with_index do |assignee, i|
+        %h2= Member.find(i).name
+        - unless assignee.empty?
+          %table
+            - assignee.each do |task|
+              %tr
+                %td= link_to task['issueKey'], Settings.backlog.view.url % task['issueKey']
+                %td= task['status']['name']
+                %td= task['summary']
+                %td= task['parentIssueId']
