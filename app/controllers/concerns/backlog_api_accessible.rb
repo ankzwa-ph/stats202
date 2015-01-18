@@ -3,7 +3,8 @@ module BacklogApiAccessible
 
   included do
     def fetch(path, params = {})
-      url = Settings.backlog.base_url + path + url_generate(params)
+      url = Settings.backlog.base_url
+      url += path + url_generate(params)
       HTTParty.get(url)
     end
   end
