@@ -14,5 +14,4 @@ class Member < ActiveHash::Base
       { id: 10, backlog_id: 1073913161, name: 'Cel' },
       { id: 11, backlog_id: 1073941726, name: 'Akira' }
     ]
-
 end

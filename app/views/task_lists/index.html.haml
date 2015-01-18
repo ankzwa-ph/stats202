@@ -4,11 +4,22 @@
     .large-12.columns
       - @tasks.each_with_index do |assignee, i|
         %h2= Member.find(i).name
-        - unless assignee.empty?
+        - if assignee.empty?
+          %p no assigned tasks...
+        - else
           %table
+            %tr
+              %th{ class: 'backlog-key' }  Key
+              %th Status
+              %th Milestone
+              %th Subject
+              %th{ class: 'backlog-key' }  P Key
+
             - assignee.each do |task|
+              - parent = get_parent_issue(task) unless task['parentIssueId'].nil?
               %tr
-                %td= link_to task['issueKey'], Settings.backlog.view.url % task['issueKey']
+                %td= link_to task['issueKey'], Settings.backlog.base_url + (Settings.backlog.path.view % task['issueKey'])
                 %td= task['status']['name']
-                %td= task['summary']
-                %td= task['parentIssueId']
+                %td= task['milestone'].empty? ? '' : task['milestone'][0]['name']
+                %td= parent.nil? ? task['summary'] : parent['summary']
+                %td= parent.nil? ? '' : (link_to parent['issueKey'], Settings.backlog.base_url + (Settings.backlog.path.view % parent['issueKey']))
