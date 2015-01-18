@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   resources :task_stats
+  resources :task_lists, only: [:index]
+
   root 'task_stats#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
