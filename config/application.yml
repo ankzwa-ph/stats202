@@ -7,6 +7,7 @@ defaults: &defaults
       issues: /api/v2/issues
     path:
       view: /view/%s
+    project_id: 1073827573
 
 
 development:
