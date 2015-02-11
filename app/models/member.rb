@@ -12,6 +12,8 @@ class Member < ActiveHash::Base
       { id: 8, backlog_id: 1073952144, name: 'Jeff' },
       { id: 9, backlog_id: 1073955528, name: 'Andy' },
       { id: 10, backlog_id: 1073913161, name: 'Cel' },
-      { id: 11, backlog_id: 1073941726, name: 'Akira' }
+      { id: 11, backlog_id: 1073941726, name: 'Akira' },
+      { id: 12, backlog_id: 1073913163, name: 'John' },
+      { id: 13, backlog_id: 1073913218, name: 'Jarl' }
     ]
 end
