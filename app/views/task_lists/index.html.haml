@@ -18,7 +18,7 @@
             - assignee.each do |task|
               - parent = fetch(Settings.backlog.api.issue, task['parentIssueId']) unless task['parentIssueId'].nil?
               %tr
-                %td= link_to task['issueKey'], Settings.backlog.base_url + (Settings.backlog.path.view % task['issueKey'])
+                %td= link_to task['issueKey'], Settings.backlog.base_url + (Settings.backlog.path.view % task['issueKey']), target: '_blank'
                 %td= task['status']['name']
                 %td= task['milestone'].empty? ? '' : task['milestone'][0]['name']
                 %td= parent.nil? ? task['summary'] : parent['summary']
