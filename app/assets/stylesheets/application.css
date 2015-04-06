@@ -43,3 +43,8 @@
 h1 {
   color: #222222;
 }
+
+#spreadsheet {
+  overflow-x: auto;
+  white-space: nowrap;
+}

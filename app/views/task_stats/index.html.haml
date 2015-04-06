@@ -1,3 +1,4 @@
+%script hljs.initHighlightingOnLoad();
 .row
   .text-center.area
     %h1 Listing Task Status
@@ -20,11 +21,12 @@
   .text-center.area
     %h1 Spreadsheet
 
-    %table{ class: 'transposed' }
-      - @transposed.each do |arr|
-        %tr
-          - arr.each do |item|
-            %td= item
+    #spreadsheet
+      %table{ class: 'transposed' }
+        - @transposed.each do |arr|
+          %tr
+            - arr.each do |item|
+              %td= item
 
   %div
     .text-center.area
