@@ -6,6 +6,7 @@ class TaskStatsController < ApplicationController
   def index
     @search = Search::TaskStat.new(search_params[:search_task_stat])
     task_stats = @search.matches
+    task_stats = task_stats.limit(30) if params[:search_task_stat].nil?
     today = task_stats.last
     @transposed = TaskStat.transpose_table(task_stats)
     gon.labels            = task_stats.map { |x| x[:processing_date].to_s }
